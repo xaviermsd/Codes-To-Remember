@@ -69,6 +69,24 @@ $products = array(
     array(3, "Nokia 6.2", 10, 499)
 );
 //echo $products[1][1]."'s Price is $".$products[1][3]." and stock count is ".$products[1][2];
+
+/* Form Validation Feilds */
+ // Check if field contains only letters and white spaces
+ if(!preg_match("/^[a-zA-Z ]*$/",$name)) {
+    $nameErr = "Only letters and white spaces are allowed";
+}
+
+// Check valid email ID with built-in function
+if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $emailErr = "Enter a valid Email ID";
+}
+
+// Check if it's a valid URL: Check this guide for in-depth regular expression explaination https://www.guru99.com/php-regular-expressions.html
+if(!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+    $websiteErr = "Invalid URL";
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
