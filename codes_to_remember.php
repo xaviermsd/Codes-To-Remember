@@ -9,6 +9,19 @@ mysqli_connect($host,$user,$password,$db_name);
 //Die Function for MSQL Error
 die("Something is wrong becouse  ".mysqli_connect_error());
 
+//Insert query with Die query error
+$query="INSERT INTO `regi_form` (`First Name`, `Last Name`, `Company`, `Email`, `Phone`, `Subject`, `Developer`) VALUES ('$fname', '$lname', '$company', '$email', '$phone', '$subject', '$developer');";  
+$run=mysqli_query($con,$query);
+if($run)
+{
+    $success="Registered Successfully!";
+}
+else
+{
+    die("Something is wrong with ".mysqli_error($con));
+}
+
+
 //Functions Save From SQL Injection, Harmful Code or Invalid Data
 //Function to clean the submitted data 
 function clean_input($fields){
@@ -18,6 +31,14 @@ function clean_input($fields){
     return $fields;
 }
 
+//To Get Multiple values from Checkbox
+//For e.g
+$technologies=$_POST['technologies'];
+$tech="";
+foreach ($technologies as $tech1){
+    //$tech.=$tech2.',';
+    $tech=$tech.$tech1.',';
+}
 /*
 * PHP Loops
 */
@@ -194,5 +215,8 @@ var_dump($int_cast);
 
 //To open the terminal:
 //Use the Ctrl+` keyboard shortcut with the backtick character.
+
+//Multiline editing in Visual Studio Code
+ctr+shift+left/right arrow to select same in bulk - Then To Move Arrow ctr+alt+up/down arroow
 
 ?>
