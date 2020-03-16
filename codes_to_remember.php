@@ -21,7 +21,54 @@ else
     die("Something is wrong with ".mysqli_error($con));
 }
 
+//select Fatch Rows and Shows data in Array
 
+$query="SELECT * FROM `regi_form`";
+$run=mysqli_query($con,$query);
+$res=mysqli_num_rows($run);
+
+//Take in while to fatch it as in While loop
+$res=mysqli_fetch_array($run);
+
+//like 
+while($res=mysqli_fetch_array($run))
+{
+    echo $res['Table name field'];
+}
+
+//______________________________________________________________________________
+//update Radio button, Checkbox and dropdown
+//https://www.phptpoint.com/update-radio-button-drop-down-list-and-checkboxes-in-php/
+
+//For Radio
+//Do this first
+//like 
+while($res=mysqli_fetch_array($run))
+{
+    echo $res['Table name field'];
+}
+//Then
+//Besides of Value e.g -
+?>
+<input type="radio" checked="checked" name="exist" value="Yes" <?php if($arrayData['Developer']=="Yes"){ echo "checked";}?>>
+<?php
+
+//For Checkbox
+//First same as above array loop then,
+$chkbox=$arrayData['Technologies'];
+$tech=explode(",",$chkbox);
+?>
+<input <?php if(in_array("MEAN",$tech)){echo "checked";}?> type="checkbox" name="technologies[]" value="MEAN">
+
+<?php
+//For Drop Down
+//Same process as above
+?>
+<option <?php if($arrayData['Subject']=="Subject 1"){echo "selected";}?> selected="selected" value="Subject 1">Subject 1</option>
+<?php
+
+
+//______________________________________________________________________________
 //Functions Save From SQL Injection, Harmful Code or Invalid Data
 //Function to clean the submitted data 
 function clean_input($fields){

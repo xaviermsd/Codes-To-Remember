@@ -7,4 +7,9 @@
 ctr+shift+left/right arrow to select same in bulk - Then To Move Arrow ctr+alt+up/down Arrow
 
 //To Set Key Bindings
-ctr+k
+ctr+alt+k 
+
+//Navigate throgh files
+ctr+p
+
+    
