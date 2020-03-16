@@ -1,0 +1,10 @@
+/* Visual Studio Tips */
+
+//To open the terminal:
+//Use the Ctrl+` keyboard shortcut with the backtick character.
+
+//Multiline editing in Visual Studio Code
+ctr+shift+left/right arrow to select same in bulk - Then To Move Arrow ctr+alt+up/down Arrow
+
+//To Set Key Bindings
+ctr+k

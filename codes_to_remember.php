@@ -61,7 +61,7 @@ do {
 
 //For Loop
 for ($x = 0; $x <= 100; $x+=10) {
-    echo "This number is ".$x."<br>";
+    echo "This number is ".$x."<br>";   
 }
 
 //Foreach Loop
@@ -210,13 +210,5 @@ var_dump(is_numeric($string_number));
 $int_cast = (int)$float;
 $int_cast = (int)$string_number;
 var_dump($int_cast);
-
-/* Visual Studio */
-
-//To open the terminal:
-//Use the Ctrl+` keyboard shortcut with the backtick character.
-
-//Multiline editing in Visual Studio Code
-ctr+shift+left/right arrow to select same in bulk - Then To Move Arrow ctr+alt+up/down arroow
 
 ?>
